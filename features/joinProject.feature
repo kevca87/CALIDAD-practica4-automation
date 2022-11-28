@@ -1,4 +1,4 @@
-Feature: Leave a previously joined project
+Feature: Join a project
   As a volunteer/coreteam/leader
   I want to join a project
   So that I can be part of it
