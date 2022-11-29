@@ -10,7 +10,7 @@ begin require 'rspec/expectations'; rescue LoadError; require 'spec/expectations
     ENV['EMAIL_CORETEAM']="coreteam@gmail.com"
 
     ENV['PSW']="123456"
-    
+    ENV['INV_PSW']="123455"
     
     Capybara.default_driver = :selenium
     

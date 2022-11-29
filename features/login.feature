@@ -1,29 +1,28 @@
 Feature: LOGIN
-  As a leader, volunteer, teamcore
+  As a volunteer/leader/coreteam
   I want to enter the system
-  So that I can interact with the system 
+  So that I can view and manage projects and events
 
 Scenario: Successful login
-    Given I have entered "<email>" as email
-    And I have entered "<password>" as password
-    When I press login
-    Then I should view the Home Page
+    Given I have entered "<email>" as email and my password
+    When I press INICIAR SESIÓN
+    Then I should see the tab icons
+      And I should see the user name "<userName>"
+  Examples:
+   | email | userName |
+   | voluntario@gmail.com | VV |
+   | lider@gmail.com | LL |
+   | coreteam@gmail.com | CT |
 
-    Examples:
-   | email | password |
-   | voluntario@gmail.com | 123456 |
-   | lider@gmail.com | 123456 |
-   | coreteam@gmail.com | 123456 |
-
-
+@invalidPassword
 Scenario: Invalid password for valid user
-    Given I have entered "<email>" as email
-    And I have entered "<password>" as password
-    Then I should view an error message
+    Given I have entered "<email>" as email and an invalid password
+    When I press INICIAR SESIÓN
+    Then I should view the message "Correo o contraseña inválidos."
 
-    Examples:
-   | email | password |
-   | voluntario@gmail.com | 1234566 |
-   | lider@gmail.com | 12346 |
-   | coreteam@gmail.com | asdfasd |
+Examples:
+   | email |
+   | voluntario@gmail.com |
+   | lider@gmail.com |
+   | coreteam@gmail.com |
 
