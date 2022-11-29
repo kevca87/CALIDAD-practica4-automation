@@ -4,18 +4,16 @@ Feature: Join a project
   So that I can be part of it
 
 Scenario: Join a project
-    Given I have entered "<email>" as email
-      And I have entered "<password>" as password
-      And I press login
-      And I go to Projects window
-      And I click on "MEDIO AMBIENTE" category
-      And I press Proyecto de Prueba ver detalles button
-    When I press UNIRME
+    Given I have entered "<email>" as email and my password
+      And I click INICIAR SESIÓN
+      And I click on Proyectos icon
+      And I click on the project "Nombre Proyecto Ambiental" ver detalles button
+    When I click UNIRME
     Then I should see the message "Participacion exitosa"
       And I should see the button UNIRME replaced by DEJAR PROYECTO
       
     Examples:
-   | email | password |
-   | voluntario@gmail.com | 123456 |
-   | lider@gmail.com | 123456 |
-   | coreteam@gmail.com | 123456 |
+   | email |
+   | voluntario@gmail.com |
+   | lider@gmail.com |
+   | coreteam@gmail.com |

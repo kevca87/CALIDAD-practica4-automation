@@ -1,24 +1,25 @@
 Feature: View Project Details
   As a volunteer/coreteam/leader
   I want to view project details
-  So that I can get more information about an specific project
+  So that I can get more information about a specific project
 
 Scenario: View project details
-    Given I have entered "<email>" as email
-      And I have entered "<password>" as password
-      And I press login
-      And I go to Projects window
+    Given I have entered "<email>" as email and my password
+      And I click INICIAR SESIÓN
+      And I click on Proyectos icon
       And I click on "MEDIO AMBIENTE" category
-    When I press Proyecto de Prueba ver detalles button
-    Then I should see the title of the project
-      And I should see the start date of the project
-      And I should see the end date of the project
-      And I should see the project objective
-      And I should see the project leader
-      And I should see the project category
-      
+    When I click on the project "Nombre Proyecto Ambiental" ver detalles button
+    Then I should see "Nombre Proyecto Ambiental" as title of the project
+      And the following information should be displayed:
+        | Fecha de Inicio: |  2022-11-29  |
+ 	      | Fecha de Fin:    |   En Progreso    | 
+        | Descripción:     |   descripción Nombre Proyecto Ambiental   | 
+        | Objetivo:        |   | 
+        | Líder:           |   KEVIN DIEGO   | 
+        | Categoría:       |   Medio Ambiente    | 
+
     Examples:
-   | email | password |
-   | voluntario@gmail.com | 123456 |
-   | lider@gmail.com | 123456 |
-   | coreteam@gmail.com | 123456 |
+   | email |
+   | voluntario@gmail.com |
+   | lider@gmail.com |
+   | coreteam@gmail.com |
