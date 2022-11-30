@@ -1,13 +1,4 @@
-Before do
-	page.driver.browser.manage.window.maximize
-    visit ('/')
-    find(:css,'#root > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div.MuiGrid-root.jss13 > div > form > div > div:nth-child(2) > div > input').set(ENV['EMAIL_VOLUNTEER'])
-    find(:css,'#root > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div.MuiGrid-root.jss13 > div > form > div > div:nth-child(3) > div > input').set(ENV['PSW'])
-    login_button = find(:css,'#root > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div.MuiGrid-root.jss13 > div > form > div > button')  
-    login_button.click
-    profile_button = find(:css,'#root > div:nth-child(2) > header > div.header-menu > div > button:nth-child(4)')
-    profile_button.click   
-end
+
 
 Given('a volunteer logged') do
     find(:css,'#root > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div.MuiGrid-root.jss13 > div > form > div > div:nth-child(2) > div > input').set(ENV['EMAIL_VOLUNTEER'])

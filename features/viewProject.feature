@@ -5,7 +5,7 @@ Feature: View Project Details
 
 Scenario: View project details
     Given I have entered "<email>" as email and my password
-      And I click INICIAR SESIÓN
+      And I press INICIAR SESIÓN
       And I click on Proyectos icon
       And I click on "MEDIO AMBIENTE" category
     When I click on the project "Nombre Proyecto Ambiental" ver detalles button
