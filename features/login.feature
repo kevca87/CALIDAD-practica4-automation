@@ -7,9 +7,9 @@ Scenario: Successful login
     Given I have entered "<email>" as email and my password
     When I press INICIAR SESIÓN
     Then I should see the tab icons
-      And I should see the user name "<userName>"
+      And I should see my credentials "<credentials>"
   Examples:
-   | email | userName |
+   | email | credentials |
    | voluntario@gmail.com | VV |
    | lider@gmail.com | LL |
    | coreteam@gmail.com | CT |
