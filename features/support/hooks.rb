@@ -1,6 +1,6 @@
 Before do
 	page.driver.browser.manage.window.maximize
-    visit ('/')
+    visit ('/login')
 end
 
 Before '@verifyNotJoinedToProject' do

@@ -20,7 +20,7 @@ begin require 'rspec/expectations'; rescue LoadError; require 'spec/expectations
     # Set the time (in seconds) Capybara should wait for elements to appear on the page
     Capybara.default_max_wait_time = 15
     Capybara.default_driver = :selenium
-    Capybara.app_host = "https://testing-start.web.app/login"
+    Capybara.app_host = "https://testing-start.web.app"
     
     class CapybaraDriverRegistrar
       # register a Selenium driver for the given browser to run on the localhost
