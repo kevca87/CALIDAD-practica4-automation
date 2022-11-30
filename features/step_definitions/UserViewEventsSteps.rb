@@ -30,10 +30,18 @@ Given('the volunteer has one or many events joined') do
         event1_button.click
         event2_button.click
         profile_button = find(:css,'#root > div:nth-child(2) > header > div.header-menu > div > button:nth-child(4)')
-        profile_button.click  
+        profile_button.click
+    else
+        puts 'The volunteer has already events registered' 
     end
 end
 
+Given('the volunteer has not events joined') do
+    if !page.has_content?('Exploarar Eventos')
+    else
+        puts 'The volunteer has already no events'
+    end
+end
 
 When("i click in the {string} tab") do |nameTab|
     if nameTab == "TUS EVENTOS"
@@ -43,6 +51,7 @@ When("i click in the {string} tab") do |nameTab|
     elsif nameTab == "TUS LOGROS"
         your_events_tab = find(:css, '#scrollable-auto-tab-2')
     end
+    your_events_tab.click
 end
 
 Then('i should be able to watch a list of the diferent events which i joined') do
