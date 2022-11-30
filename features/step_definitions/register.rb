@@ -12,6 +12,11 @@ When('the button {string} is pressed') do |button|
     register_button.click
 end
 
+When('I click outside of the input field') do
+    formPaper = find(:css,'body')
+    formPaper.click
+end
+
 Then('an alert appears with the message {string}') do |alertMessage|
     expect(page).to have_content(alertMessage)
 end
