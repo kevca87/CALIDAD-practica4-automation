@@ -36,7 +36,7 @@ Then('the following information should be displayed:') do |table|
         when "Líder:"
             expect(page.find('p>b',:text => "Líder:").first(:xpath,".//..")).to have_content(value)
         when "Categoría:"
-            expect(page.find('p>b',:text => "Categoría:").first(:xpath,".//..")).to have_content(value)
+            expect(page.find('p>b',:text => "Categoría:").parfirstent).to have_content(value)
         end
     end
 end

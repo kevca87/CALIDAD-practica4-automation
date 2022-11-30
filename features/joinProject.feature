@@ -5,13 +5,13 @@ Feature: Join a project
 
 Scenario: Join a project
     Given I have entered "<email>" as email and my password
-      And I click INICIAR SESIÓN
+      And I press INICIAR SESIÓN
       And I click on Proyectos icon
+      And I click on "MEDIO AMBIENTE" category
       And I click on the project "Nombre Proyecto Ambiental" ver detalles button
     When I click UNIRME
     Then I should see the message "Participacion exitosa"
-      And I should see the button UNIRME replaced by DEJAR PROYECTO
-      
+      And I should see the button UNIRME replaced by "DEJAR PROYECTO"
     Examples:
    | email |
    | voluntario@gmail.com |
