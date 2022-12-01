@@ -7,10 +7,10 @@ Given('I click on {string} category') do |projectCategory|
 end
 
 #When I click on the project "Nombre Proyecto Ambiental" ver detalles button
-When('I click on the project {string} ver detalles button') do |projectName|
-    projectName = 'detalle' + projectName
-    puts(projectName)
-    projectSeeDetailsLinkButton = find(:css,'a.ver-button[name="'+projectName+'"]')
+When('I click on the project {string} ver detalles button') do |name|
+    @projectName = 'detalle' + name
+    puts(@projectName)
+    projectSeeDetailsLinkButton = find(:css,'a.ver-button[name="'+@projectName+'"]')
     projectSeeDetailsLinkButton.click
 end
 
