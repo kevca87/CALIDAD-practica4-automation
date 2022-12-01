@@ -15,6 +15,7 @@ Scenario: coreteam creates project successfully
       And I click CREAR PROYECTO button in the form
     Then I should see the list of project categories
       And validate the project exists
+    @deleteCreatedProject
 
 @no_create
 Scenario: volunteer and leader users cannot create project

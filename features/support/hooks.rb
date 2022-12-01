@@ -94,3 +94,20 @@ Before "@verifyJoinedToProject" do
     verifyJoined("lider@gmail.com")
 end
 
+Before "@verifyProjectToBeCreatedDoesNotExistAlready" do
+    login("coreteam@gmail.com")       
+    enterProjectWindowFromHPAndSelectCategory("MEDIO AMBIENTE")
+    sleep 2
+    projectNameOriginal = 'Reforestacion del Tunari'
+    projectName = 'detalle' + projectNameOriginal
+    sleep 2
+    if page.has_css?('a.ver-button[name="'+projectName+'"]')
+        puts("project found")
+        enterProjectDetailsFromCategory(projectNameOriginal)
+        sleep 8
+        deleteButton = find('button',:text => "ELIMINAR")
+        deleteButton.click
+        deleteConfirmationButton = find('button[name="eliminarproyecto1"]')
+        deleteConfirmationButton.click
+    end    
+end
