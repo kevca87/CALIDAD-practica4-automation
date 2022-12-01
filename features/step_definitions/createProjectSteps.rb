@@ -1,9 +1,8 @@
 # And I click on Proyectos icon
 Given('I click on Proyectos icon') do
     sleep 2
-    projectsIcon = find_all(:css, 'span.MuiBottomNavigationAction-wrapper')[1]    
-    projectsIcon.click
-    sleep 3
+    visit ('https://testing-start.web.app/projects/categories')
+    sleep 5
 end
 
 # When I click CREAR PROYECTO
@@ -50,8 +49,10 @@ end
 
 #And validate the project exists
 Then('validate the project exists') do
-    @medioAmbienteCategory.click
     sleep 2
+    @medioAmbienteCategory.click
+    puts("validate")
+    sleep 4
     #projectTitles = find_all('div p.MuiTypography-root.content-title.MuiTypography-body1.MuiTypography-gutterBottom')
     projectTitle = find('p', :text => @projectTitle)
     projectDescription= find('p', :text => @projectDescription)

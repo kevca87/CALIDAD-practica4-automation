@@ -9,7 +9,7 @@ Scenario: coreteam deletes project successfully
       And I press INICIAR SESIÓN
       And I click on Proyectos icon
       And I click on "MEDIO AMBIENTE" category
-      And I click on the project "Nombre Proyecto Ambiental para borrar" ver detalles button
+      And I click on the project "Limpiando el Río Rocha" ver detalles button
     When I click on ELIMINAR
         And I click on ELIMINAR confirmation message
     Then I should see validate the project is deleted
