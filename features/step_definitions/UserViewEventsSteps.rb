@@ -15,13 +15,16 @@ Given('in the account view') do
 end
 
 Given('the volunteer has one or many events joined') do
-    if page.has_content?('Explorar Eventos')
-        explore_events_button = find(:css,'#scrollable-auto-tabpane-0 > div > span > div > div.jss42 > button')
+    if page.has_xpath?('//*[@id="scrollable-auto-tabpane-0"]/div/span/div/div[2]/button')
+        explore_events_button = find(:xpath,'//*[@id="scrollable-auto-tabpane-0"]/div/span/div/div[2]/button')
         explore_events_button.click
-        event1_button = find(:css,'#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(4) > div > div.CardBody-Eventos.card-body > div > button:nth-child(1)')
-        event2_button = find(:css,'#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(3) > div > div.CardBody-Eventos.card-body > div > button:nth-child(1)')
-        event1_button.click
-        event2_button.click
+        list_events = page.all('div', class: 'card1')
+        events_to_test = Array.new(list_events.size()) { rand(1..list_events.size()) }
+        events_to_test = events_to_test.to_set
+        events_to_test.each do |i|
+            event_to_join_button = find(:css,"#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(#{i}) > div > div.CardBody-Eventos.card-body > div > button:nth-child(1)")
+            event_to_join_button.click
+        end
         profile_button = find(:css,'#root > div:nth-child(2) > header > div.header-menu > div > button:nth-child(4)')
         profile_button.click
     else
@@ -30,15 +33,14 @@ Given('the volunteer has one or many events joined') do
 end
 
 Given('the volunteer has not events joined') do
-    if !page.has_content?('Exploarar Eventos')
+    if !page.has_xpath?('//*[@id="scrollable-auto-tabpane-0"]/div/span/div/div[2]/button')
         view_all_events_button = find(:css, '#root > div:nth-child(2) > header > div.header-menu > div > button:nth-child(3)')
         view_all_events_button.click
         within(:xpath, '//*[@id="root"]/div[2]/div[1]/div/div[1]/div[2]') do
             while page.has_content?('Dejar de Participar')
-                page.all('button', text: 'Dejar de Participar').each do |buttons_leave_event|
-                    buttons_leave_event.click
-                    sleep 3
-                end
+                leave_button = page.all('button', text: 'Dejar de Participar')[0]
+                leave_button.click
+                sleep 2
             end
         end
         profile_button = find(:css,'#root > div:nth-child(2) > header > div.header-menu > div > button:nth-child(4)')
