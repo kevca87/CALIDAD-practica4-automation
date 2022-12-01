@@ -1,9 +1,8 @@
 # And I click on Proyectos icon
 Given('I click on Proyectos icon') do
     sleep 2
-    projectsIcon = find_all(:css, 'span.MuiBottomNavigationAction-wrapper')[1]    
-    projectsIcon.click
-    sleep 3
+    visit ('https://testing-start.web.app/projects/categories')
+    sleep 5
 end
 
 # When I click CREAR PROYECTO
@@ -19,8 +18,10 @@ When('I enter the required fields as shown below') do |table|
     case key
         when "Project name:"
             fill_in 'titulo', :with => value
+            @projectTitle = value
         when "Description:"
             fill_in 'descripcion', :with => value
+            @projectDescription = value
         end
     end
 end
@@ -48,14 +49,16 @@ end
 
 #And validate the project exists
 Then('validate the project exists') do
-    @medioAmbienteCategory.click
     sleep 2
+    @medioAmbienteCategory.click
+    puts("validate")
+    sleep 4
     #projectTitles = find_all('div p.MuiTypography-root.content-title.MuiTypography-body1.MuiTypography-gutterBottom')
-    projectTitle = find('p', :text => "es el proyecto para probar")
-    projectDescription= find('p', :text => "descripción de proyecto para proba")
+    projectTitle = find('p', :text => @projectTitle)
+    projectDescription= find('p', :text => @projectDescription)
 end
 
 Then('I should not see the button CREAR PROYECTO') do
-    page.should_not have_content('CREAR PROYECTO')
-    page.should_not have_css('button[name="crearProyecto"]')
+    expect(page).not_to have_content('CREAR PROYECTO')
+    expect(page).not_to have_css('button[name="crearProyecto"]')
 end
