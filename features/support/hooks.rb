@@ -59,6 +59,21 @@ def verifyNotJoined(email)
     end    
 end
 
+
+def verifyJoined(email)
+    login(email)
+    enterProjectWindowFromHPAndSelectCategory("MEDIO AMBIENTE")
+    sleep 2
+    projectName = 'Nombre Proyecto Ambiental'
+    enterProjectDetailsFromCategory(projectName)
+    if page.has_text?('DEJAR PROYECTO')
+        puts("JOINED")
+    else
+        leaveProjectButton = find('button',:text => "UNIRME")
+        leaveProjectButton.click
+    end    
+end
+
 Before '@verifyNotJoinedToProject' do 
     verifyNotJoined("coreteam@gmail.com")
     verifyNotJoined("voluntario@gmail.com")
@@ -72,3 +87,10 @@ Before "@verifyProjectExists" do
     projectName = 'Nombre Proyecto Ambiental'
     enterProjectDetailsFromCategory(projectName)
 end
+
+Before "@verifyJoinedToProject" do
+    verifyJoined("coreteam@gmail.com")
+    verifyJoined("voluntario@gmail.com")
+    verifyJoined("lider@gmail.com")
+end
+
