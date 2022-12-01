@@ -159,12 +159,18 @@ Before '@deleteCreatedProject' do
     projectNameOriginal = 'Reforestacion del Tunari'
     projectName = 'detalle' + projectNameOriginal
     sleep 2
-    enterProjectDetailsFromCategory(projectNameOriginal)
-    sleep 8
-    deleteButton = find('button',:text => "ELIMINAR")
-    deleteButton.click
-    deleteConfirmationButton = find('button[name="eliminarproyecto1"]')
-    deleteConfirmationButton.click   
+    if page.has_css?('a.ver-button[name="'+projectName+'"]')  
+        puts("deleting...")
+        enterProjectDetailsFromCategory(projectNameOriginal)    
+        sleep 10
+        deleteButton = find('button',:text => "ELIMINAR")
+        deleteButton.click
+        deleteConfirmationButton = find('button[name="eliminarproyecto1"]')
+        deleteConfirmationButton.click 
+    else          
+        puts("is already deleted")
+    end
+    logout("CT")
 end
 
 def verifyNotJoined(email)

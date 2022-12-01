@@ -59,6 +59,6 @@ Then('validate the project exists') do
 end
 
 Then('I should not see the button CREAR PROYECTO') do
-    page.should_not have_content('CREAR PROYECTO')
-    page.should_not have_css('button[name="crearProyecto"]')
+    expect(page).not_to have_content('CREAR PROYECTO')
+    expect(page).not_to have_css('button[name="crearProyecto"]')
 end
