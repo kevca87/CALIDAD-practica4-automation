@@ -11,9 +11,3 @@ end
 Then('I should see the message {string}') do |message|
     expect(page).to have_content(message)
 end
-
-#And I should see the button UNIRME replaced by "DEJAR PROYECTO"
-Then('I should see the button UNIRME replaced by {string}') do |buttonText|\
-    sleep 8
-    expect(find('button',:text => buttonText))
-end

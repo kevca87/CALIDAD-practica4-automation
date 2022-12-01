@@ -45,7 +45,7 @@ Before '@verifyProjectToDeleteExists' do
     enterProjectDetailsFromCategory(projectName)
 end
 
-Before '@verifyNotJoinedToProject' do |email|
+def verifyNotJoined(email)
     login(email)
     enterProjectWindowFromHPAndSelectCategory("MEDIO AMBIENTE")
     sleep 2
@@ -57,6 +57,12 @@ Before '@verifyNotJoinedToProject' do |email|
         leaveProjectButton = find('button',:text => "DEJAR PROYECTO")
         leaveProjectButton.click
     end    
+end
+
+Before '@verifyNotJoinedToProject' do 
+    verifyNotJoined("coreteam@gmail.com")
+    verifyNotJoined("voluntario@gmail.com")
+    verifyNotJoined("lider@gmail.com")
 end
 
 Before "@verifyProjectExists" do
