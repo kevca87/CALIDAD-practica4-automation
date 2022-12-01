@@ -3,6 +3,7 @@ Feature: Join a project
   I want to join a project
   So that I can be part of it
 
+@verifyNotJoinedToProject(email)
 Scenario: Join a project
     Given I have entered "<email>" as email and my password
       And I press INICIAR SESIÓN

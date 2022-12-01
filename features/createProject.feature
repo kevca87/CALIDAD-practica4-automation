@@ -3,15 +3,15 @@ Feature: Create Project
   I want to create a project
   So that people can participate in it
 
-@create
+@verifyProjectToBeCreatedDoesNotExistAlready
 Scenario: coreteam creates project successfully
     Given I have entered "coreteam@gmail.com" as email and my password
       And I press INICIAR SESIÓN
       And I click on Proyectos icon
-    When I click button "CREAR PROYECTO"
+    When I click CREAR PROYECTO
       And I enter the required fields as shown below
-      |Project name: 	    | es el proyecto para probar            |
-      |Description: 	    | descripción de proyecto para probar             |
+      |Project name: 	    | Reforestacion del Tunari            |
+      |Description: 	    | Reforestar Cerro Tunari para mejorar medio ambiente             |
       And I click CREAR PROYECTO button in the form
     Then I should see the list of project categories
       And validate the project exists

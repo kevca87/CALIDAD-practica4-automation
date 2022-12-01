@@ -19,8 +19,10 @@ When('I enter the required fields as shown below') do |table|
     case key
         when "Project name:"
             fill_in 'titulo', :with => value
+            @projectTitle = value
         when "Description:"
             fill_in 'descripcion', :with => value
+            @projectDescription = value
         end
     end
 end
@@ -51,8 +53,8 @@ Then('validate the project exists') do
     @medioAmbienteCategory.click
     sleep 2
     #projectTitles = find_all('div p.MuiTypography-root.content-title.MuiTypography-body1.MuiTypography-gutterBottom')
-    projectTitle = find('p', :text => "es el proyecto para probar")
-    projectDescription= find('p', :text => "descripción de proyecto para proba")
+    projectTitle = find('p', :text => @projectTitle)
+    projectDescription= find('p', :text => @projectDescription)
 end
 
 Then('I should not see the button CREAR PROYECTO') do
