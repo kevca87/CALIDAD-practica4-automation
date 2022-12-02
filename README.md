@@ -14,11 +14,14 @@ Para poder correr las pruebas, se requiere configurar el ambiente, para lo cual 
   1. Instalar Ruby + Devkit (rubyinstaller-devkit-...exe) 
       - Enlace para descarga: https://rubyinstaller.org/downloads/
           ![image](https://user-images.githubusercontent.com/74866417/205362523-9c9608a6-8f10-45c7-a57f-8f75955d1d73.png)
+          
       - Instalación normal:
           * Aceptar la licencia
             ![image](https://user-images.githubusercontent.com/74866417/205361811-38f886d4-414c-45b3-89c0-c23a22113b58.png)
+
           * Seleccionar documentación opcionalmente
           ![image](https://user-images.githubusercontent.com/74866417/205362118-18170b7b-af05-4b15-9277-0a697b472e24.png)
+
           * NEXT, INSTALAR
           
   2. Agregar Ruby al PATH

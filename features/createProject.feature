@@ -38,15 +38,6 @@ Scenario: coreteam creates project with only required fields successfully
       And validate the project exists
     @deleteCreatedProject
 
-@non-required-fields
-Scenario: coreteam fails to create project without fields: name and description
-    Given I have entered "coreteam@gmail.com" as email and my password
-      And I press INICIAR SESIÓN
-      And I click on Proyectos icon
-    When I click CREAR PROYECTO          
-      And I click CREAR PROYECTO button in the form
-    Then I should see the message "Error: Campo required" in both fields
-
 @no_create
 Scenario: volunteer and leader users cannot create project
     Given I have entered "<email>" as email and my password
@@ -56,3 +47,13 @@ Examples:
     | email               |
     |  voluntario@gmail.com   |
     |  lider@gmail.com   |
+
+## NOTE: This scenario is not proved to be working correctly
+# @non-required-fields
+# Scenario: coreteam fails to create project without fields: name and description
+#    Given I have entered "coreteam@gmail.com" as email and my password
+#      And I press INICIAR SESIÓN
+#      And I click on Proyectos icon
+#    When I click CREAR PROYECTO          
+#      And I click CREAR PROYECTO button in the form
+#    Then I should see the message "Error: Campo required" in both fields
