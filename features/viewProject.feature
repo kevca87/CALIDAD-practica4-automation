@@ -3,7 +3,7 @@ Feature: View Project Details
   I want to view project details
   So that I can get more information about a specific project
 
-@verifyExistingProject
+@verifyProjectExists
 Scenario: View project details
     Given I have entered "<email>" as email and my password
       And I press INICIAR SESIÓN

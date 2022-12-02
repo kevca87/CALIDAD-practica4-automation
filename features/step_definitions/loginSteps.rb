@@ -5,6 +5,7 @@ end
 
 #Given I have entered "<email>" as email and my password
 Given('I have entered {string} as email and my password') do |userEmail|
+    sleep 2
     find(:css,'#root > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div.MuiGrid-root.jss13 > div > form > div > div:nth-child(2) > div > input').set(userEmail)    
     find(:css,'#root > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div.MuiGrid-root.jss13 > div > form > div > div:nth-child(3) > div > input').set(ENV['PSW'])    
 end
