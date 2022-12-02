@@ -26,6 +26,24 @@ Before "@verifyProjectToBeCreatedDoesNotExistAlready" do
     end    
 end
 
+Before '@verifyProjectToBeCreatedWithAllFieldsDoesNotExistAlready' do
+    login("coreteam@gmail.com")       
+    enterProjectWindowFromHPAndSelectCategory("ANIMALES")
+    sleep 2
+    projectNameOriginal = 'En Busca de Hogares'
+    projectName = 'detalle' + projectNameOriginal
+    sleep 2
+    if page.has_css?('a.ver-button[name="'+projectName+'"]')
+        puts("project found")
+        enterProjectDetailsFromCategory(projectNameOriginal)
+        sleep 8
+        deleteButton = find('button',:text => "ELIMINAR")
+        deleteButton.click
+        deleteConfirmationButton = find('button[name="eliminarproyecto1"]')
+        deleteConfirmationButton.click
+    end    
+end
+
 Before '@verifyProjectToDeleteExists' do
     login("coreteam@gmail.com")       
     enterProjectWindowFromHPAndSelectCategory("MEDIO AMBIENTE")
@@ -106,4 +124,25 @@ Before '@verifyProjectExists' do
         createProjectButton = find(:css,'input[name="crearProyecto1"]')
         createProjectButton.click
     end    
+end
+
+Before '@deleteCreatedProjectWithAllFields' do
+    login("coreteam@gmail.com")       
+    enterProjectWindowFromHPAndSelectCategory("ANIMALES")
+    sleep 2
+    projectNameOriginal = 'En Busca de Hogares'
+    projectName = 'detalle' + projectNameOriginal
+    sleep 2
+    if page.has_css?('a.ver-button[name="'+projectName+'"]')  
+        puts("deleting...")
+        enterProjectDetailsFromCategory(projectNameOriginal)    
+        sleep 10
+        deleteButton = find('button',:text => "ELIMINAR")
+        deleteButton.click
+        deleteConfirmationButton = find('button[name="eliminarproyecto1"]')
+        deleteConfirmationButton.click 
+    else          
+        puts("is already deleted")
+    end
+    logout("CT")
 end
