@@ -64,7 +64,6 @@ Then('validate the project exists') do
     @medioAmbienteCategory.click
     puts("validate")
     sleep 6
-    #projectTitles = find_all('div p.MuiTypography-root.content-title.MuiTypography-body1.MuiTypography-gutterBottom')
     projectTitle = find('p', :text => @projectTitle)
     projectDescription= find('p', :text => @projectDescription)
 end
@@ -76,7 +75,6 @@ Then('validate the project exists in category {string}') do |projectCategory|
     categoryElement.click
     puts("validate")
     sleep 6
-    #projectTitles = find_all('div p.MuiTypography-root.content-title.MuiTypography-body1.MuiTypography-gutterBottom')
     projectTitle = find('p', :text => @projectTitle)
     projectDescription= find('p', :text => @projectDescription)
 end

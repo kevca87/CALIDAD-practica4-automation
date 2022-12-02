@@ -3,7 +3,7 @@ Feature: Modify Project
   I want to modify a project
   So that I can update its information
 
-Scenario: coreteam creates project successfully
+Scenario: coreteam modifies project successfully
     Given I have entered "<email>" as email and my password
       And I click INICIAR SESIÓN
       And I click on Proyectos icon

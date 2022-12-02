@@ -39,7 +39,6 @@ end
 
 def select_option(css_selector,selectText, value)
     selectDropdown = find(css_selector, visible: false).first(:xpath,".//..").click
-    #selectDropdown = find(:css, css_selector+'[aria-hidden="true"]')
     find('li', :text=>value).click
 end
 
