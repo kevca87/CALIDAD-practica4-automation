@@ -50,26 +50,56 @@ Para poder correr las pruebas, se requiere configurar el ambiente, para lo cual 
   - Ingresar al directorio CALIDAD-practica4-automation
   - Abrir una terminal desde ese directorio
   - Ejecutar los comandos: 
-      * cucumber features\login.feature
-            para ejecutar las pruebas de login
-      * cucumber features\createProject.feature
-             para ejecutar las pruebas para crear un proyecto
-      * cucumber features\deleteProject.feature
-             para ejecutar las pruebas para eliminar un proyecto
-      * cucumber features\joinProject.feature
-             para ejecutar las pruebas para unirse a un proyecto
-      * cucumber features\leaveProject.feature
-             para ejecutar las pruebas para dejar un proyecto
-      * cucumber features\viewProject.feature
-             para ejecutar las pruebas para ver un proyecto
-      * cucumber features\register.feature
-             para ejecutar las pruebas para registrarse
-      * cucumber features\UserEditProfileData.feature
-             para ejecutar las pruebas para editar datos de perfil de un usuario
-      * cucumber features\UserViewEvents.feature
-             para ejecutar las pruebas para ver eventos desde un usuario
-      * cucumber features\UserViewProjects.feature
-             para ejecutar las pruebas para ver proyectos desde un usuario 
+      * Para ejecutar las pruebas de login
+        ```
+        cucumber features\login.feature
+        ```
+
+      * Para ejecutar las pruebas para crear un proyecto
+        ```
+        cucumber features\createProject.feature
+        ```
+             
+      * Para ejecutar las pruebas para eliminar un proyecto
+        ```
+        cucumber features\deleteProject.feature
+        ```
+             
+      * Para ejecutar las pruebas para unirse a un proyecto 
+        ```
+        cucumber features\joinProject.feature
+        ```
+             
+      * Para ejecutar las pruebas para dejar un proyecto
+        ```
+        cucumber features\leaveProject.feature
+        ```
+             
+      * Para ejecutar las pruebas para ver un proyecto
+        ```
+        cucumber features\viewProject.feature
+        ```
+             
+      * Para ejecutar las pruebas para registrarse
+        ```
+        cucumber features\register.feature
+        ```
+             
+      * Para ejecutar las pruebas para editar datos de perfil de un usuario
+        ```
+        cucumber features\UserEditProfileData.feature
+        ```
+             
+      * Para ejecutar las pruebas para ver eventos desde un usuario
+        ```
+        cucumber features\UserViewEvents.feature
+        ```
+             
+      * Para ejecutar las pruebas para ver proyectos desde un usuario 
+        ```
+        cucumber features\UserViewProjects.feature
+        ```
+             
              
       ** Es importante contar con buena conexión a Internet ya que las pruebas podrían fallar en caso contrario
       
