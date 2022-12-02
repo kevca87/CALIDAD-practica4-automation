@@ -92,17 +92,17 @@ Before '@verifyProjectExists' do
     enterProjectWindowFromHP()
     enterProjectWindowFromHPAndSelectCategory("MEDIO AMBIENTE")
     sleep 2
-    projectName = 'Nombre Proyecto Ambiental'
+    projectName = "detallePurificación de Aire en Cercado"
     if page.has_css?('a.ver-button[name="'+projectName+'"]')
         puts("project found")
     else
-        visit('/projects/categories')
+        puts("project not found")
+        enterProjectWindowFromHP()
         createProjectButton = find(:css,'button[name="crearProyecto"]')
         createProjectButton.click
-        fill_in 'titulo', :with => 'Nombre Proyecto Ambiental'
-        fill_in 'descripcion', :with => 'descripción Nombre Proyecto Ambiental'
-        fill_in 'fecha_inicio', :with => '2022-11-29'
-        fill_in 'fecha_fin', :with => '2022-12-27'        
+        fill_in 'titulo', :with => 'Purificación de Aire en Cercado'
+        fill_in 'descripcion', :with => 'se realizará una campaña sobre purificación de aire'
+        fill_in 'fecha_inicio', :with => '02-12-2022'      
         createProjectButton = find(:css,'input[name="crearProyecto1"]')
         createProjectButton.click
     end    

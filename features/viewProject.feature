@@ -9,12 +9,12 @@ Scenario: View project details
       And I press INICIAR SESIÓN
       And I click on Proyectos icon
       And I click on "MEDIO AMBIENTE" category
-    When I click on the project "Nombre Proyecto Ambiental" ver detalles button
-    Then I should see "Nombre Proyecto Ambiental" as title of the project
+    When I click on the project "Purificación de Aire en Cercado" ver detalles button
+    Then I should see "Purificación de Aire en Cercado" as title of the project
       And the following information should be displayed:
-        | Fecha de Inicio: |  2022-11-29  |
+        | Fecha de Inicio: |  2022-12-02  |
  	      | Fecha de Fin:    |   En Progreso    | 
-        | Descripción:     |   descripción Nombre Proyecto Ambiental   | 
+        | Descripción:     |   se realizará una campaña sobre purificación de aire   | 
         | Objetivo:        |   | 
         | Líder:           |   KEVIN DIEGO   | 
         | Categoría:       |   Medio Ambiente    | 
